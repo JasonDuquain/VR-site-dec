@@ -27,14 +27,24 @@
     
 }
 
-@mixin center {
-    width: 90%;
+@mixin center($w) {
+    width: $w;
     max-width: $max-width;
     margin: 0 auto; 
 }
 
+@mixin roundy($dim, $brdr: null) {
+    width: $dim;
+    height: $dim;
+    border-radius: 50%;
+    border: $brdr;
+}
 
-
-
+@mixin flexy($disp: flex, $dir: null, $wrap: null, $just: null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+}
 
 
