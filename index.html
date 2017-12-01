@@ -9,6 +9,7 @@
       rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
+  
   <body>
     <header><!--position: relative-->
       <div class="inner">
@@ -68,7 +69,57 @@
     </div>
     
     <footer><!--position: relative-->
-      <span>&copy;2017 Experience VR, The Blog</span>
+      <span>&copy;<date>1999</date> Experience VR, The Blog</span>
     </footer>
+    
+    <script>
+	    
+        let dateText = document.querySelector('span date');
+        let mainNav = document.querySelector('.main-nav');
+        let anchs = mainNav.querySelectorAll('a');
+        
+        mainNav.addEventListener('click', (e) => {
+            
+            e.preventDefault();
+            if (e.target.tagName.toLowerCase() === 'a' && !e.target.classList.contains('clicked')) {
+                anchs.forEach((el) => {
+                    el.classList.remove('clicked');
+                    e.target.classList.add('clicked');
+                });
+            }
+            
+        });
+        
+        
+        dateText.textContent = new Date().getFullYear();
+        
+    </script>
+    
   </body>
 </html>
+
+
+
+<!-- 
+       
+    let dateText = document.querySelector('span date');
+     let mainNav = document.querySelector('.main-nav');
+     let anchs = mainNav.querySelectorAll('a');
+     
+     mainNav.addEventListener('click', (e) => {
+         
+         e.preventDefault();
+         if (e.target.tagName.toLowerCase() === 'a' && !e.target.classList.contains('clicked')) {
+             anchs.forEach((el) => {
+                 el.classList.remove('clicked');
+                 e.target.classList.add('clicked');
+             });
+         }
+         
+     });
+     
+     
+     dateText.textContent = new Date().getFullYear();
+        
+-->
+
